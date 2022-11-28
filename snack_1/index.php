@@ -8,23 +8,44 @@ Olimpia Milano - Cantù | 55-60
 */
 
 $matches = [
-    "Olimpia Milano - Roma | 29-30",
-    "Pisa - Parma | 21-35",
-    "Milano - Pisa | 11-55",
-    "Molise - Monteparano | 53-68",
-    "Palermo - Catania | 13-94",
-    "Pisa - Milano | 21-25",
-    "Milano - Palermo | 21-55",
-    "Firenze - Santa Lucia | 56-68",
-    "Palermo - Catania | 13-94",
-    "Molise - Milano | 21-25",
-    "Milano - Parma | 21-55",
-    "Firenze - San Giorgio | 56-68"
+    [
+        "home" => "Roma",
+        "guest" => "Pisa",
+        "home_pt" => "11",
+        "guest_pt" => "21"
+    ],
+    [
+        "home" => "Pisa",
+        "guest" => "Milano",
+        "home_pt" => "21",
+        "guest_pt" => "23"
+    ],
+    [
+        "home" => "Ancona",
+        "guest" => "Parigi",
+        "home_pt" => "25",
+        "guest_pt" => "20"
+    ]
 ];
 
-echo "Ultime partite giocate: <br>";
+?>
 
-foreach ($matches as $match) {
+<!DOCTYPE html>
+<html lang="en">
 
-    echo $match . "<br>";
-};
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Snack 1</title>
+</head>
+
+<body>
+    <ul>
+        <?php foreach ($matches as $match) : ?>
+            <li> <?php echo $match["home"] . " - " . $match["guest"] . " | " . $match["home_pt"] . " - " . $match["guest_pt"] ?></li>
+        <?php endforeach; ?>
+    </ul>
+</body>
+
+</html>
